@@ -78,34 +78,34 @@
 		return call_user_func_array($cmd[0],$args);
 	}
 
-  function privmsg($nick,$msg)
+  function irc_privmsg($nick,$msg)
   {
     sock_puts("PRIVMSG $nick : $msg");
   }
   
  
-  function notice($nick,$msg)
+  function irc_notice($nick,$msg)
   {
     sock_puts("NOTICE $nick :$msg");
   }
   
-  function ctcp($nick,$msg)
+  function irc_ctcp($nick,$msg)
   {
     sock_puts("NOTICE $nick :\0x01$msg\0x01");
   }
   
-  function join()
+  function irc_join()
   {
     $argc=func_num_args();
     if(!$argc)
       return FALSE;
     $channels=func_get_arg(0);
     $keys=($argc==1?NULL:func_get_arg(1));
-    if(is_string($channels);
+    if(is_string($channels))
     {
       $channels[]=array($channels);
       $keys[]=array($keys);
-    } elseif(!is_array($channels) {
+    } elseif(!is_array($channels)) {
       return FALSE;
     }
     $channels=implode(',',$channels);
@@ -114,7 +114,7 @@
     return TRUE;
   }
   
-  function part($chname)
+  function irc_part($chname)
   {
     if(is_array($chname))
       $chname=implode(' ',$chname);

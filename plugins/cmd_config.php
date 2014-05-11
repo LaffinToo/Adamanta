@@ -15,8 +15,7 @@
 				cmd_config_show($val,"{$basekey}|{$idx}",$prefix);
 			} else {
 				util_stringify_type($val);
-        privmsg($to,"[$basekey|$idx] = $val");
-				// sock_puts("{$prefix}[{$basekey}|{$idx}] = {$val}");
+				irc_privmsg($to,"[$basekey|$idx] = $val");
 			}
 		}
 	}

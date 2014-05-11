@@ -50,7 +50,7 @@
 		{
 			if(empty($buffer))
 				continue;
-			util_parse($buffer,&$from,&$code,$msg);
+			util_parse($buffer,$from,$code,$msg);
 			util_fixfrom($from);
 			$fcode=strtolower($code);
 				$func="got_{$fcode}";

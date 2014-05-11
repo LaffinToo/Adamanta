@@ -14,7 +14,7 @@
 				{
 					$config[]=array('name'=>$chan);
 				}
-				join($channels);
+				irc_join($channels);
 				break;
 			case 'del':
 				$channels=explode(' ',$msg);
@@ -32,7 +32,7 @@
 						$pchan[]=$chan;
 					}
 				}
-				part($pchan);
+				irc_part($pchan);
 				break;
 		}
 	}
